@@ -1,0 +1,62 @@
+﻿@model List<StockTrade>
+@{
+    ViewBag.Title = "Explore";
+}
+
+<div id="top-bar-div" class="mt mb ml">
+    <a asp-controller="Stocks" asp-action="Explore" class="link-hover">Explore</a>
+    <a asp-controller="Trade" asp-action="Index" class="link-hover">Trade</a>
+    <a asp-controller="Trade" asp-action="Orders" class="link-hover">Orders</a>
+</div>
+
+<div class="text-grey ml">
+    <span>Stocks</span>
+    <i class="fa-solid fa-caret-right"></i>
+    <span>Explore</span>
+</div>
+
+<div class="flex stocks-list">
+    <div class="flex-1" id="stocks-list">
+        <div class="box">
+            <div class="flex">
+                <div class="flex-1">
+                    <h4 class="text-grey mb">Stocks</h4>
+                </div>
+                <div class="flex-1 text-right">
+                    <a href="~/stocks/explore?showAll=true" class="mr">Show all stocks</a>
+                </div>
+            </div>
+            <ul class="list">
+                @foreach (StockTrade stock in Model)
+                {
+                    <li>
+                        @if (Context.Request.Query.ContainsKey("showAll"))
+                        {
+                            <a href="~/stocks/explore/@stock.StockSymbol?showAll=@Context.Request.Query["showAll"]">
+                                <h4 style="text-decoration:none; color:black">@stock.StockName</h4>
+                            </a>
+                            <div class="text-grey">(@stock.StockSymbol)</div>
+                        }
+                        else
+                        {
+                            <a href="~/stocks/explore/@stock.StockSymbol">
+                                <h4 style="text-decoration:none; color:black">@stock.StockName</h4>
+                            </a>
+                            <div class="text-grey">(@stock.StockSymbol)</div>
+                        }
+                    </li>
+                }
+            </ul>
+            @if (Model.Count == 0)
+            {
+                <div class="mt text-red">No stocks to diplay</div>
+            }
+        </div>
+    </div>
+    <div class="flex-1" id="stock-details">
+        @if (ViewBag.Stock != null)
+        {
+            @await Component.InvokeAsync("SelectedStock", new { stock = ViewBag.Stock })
+        }
+    </div>
+</div>

@@ -1,0 +1,49 @@
+﻿@model Orders
+
+@{
+    Layout = null;
+}
+
+<link href="@("http://" + Context.Request.Host.ToString() + "/Stylesheet.css")" rel="stylesheet" />
+
+<h1>Orders</h1>
+
+<div class="page-content">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Date and time</th>
+                <th>Stocks</th>
+                <th>Order Type</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Trade Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (BuyOrderResponse buyOrderResponse in Model.BuyOrders)
+            {
+                <tr>
+                    <td>@buyOrderResponse.DateAndTimeOfOrder.ToString("yyyy-MM-dd h:mm:ss tt")</td>
+                    <td>@buyOrderResponse.StockName (@buyOrderResponse.StockSymbol)</td>
+                    <td>Buy Order</td>
+                    <td>@buyOrderResponse.Quantity</td>
+                    <td>$ @buyOrderResponse.Price</td>
+                    <td>$ @buyOrderResponse.TradeAmount</td>
+                </tr>
+
+            }
+            @foreach (SellOrderResponse sellOrderResponse in Model.SellOrders)
+            {
+                <tr>
+                    <td>@sellOrderResponse.DateAndTimeOfOrder.ToString("yyyy-MM-dd h:mm:ss tt")</td>
+                    <td>@sellOrderResponse.StockName (@sellOrderResponse.StockSymbol)</td>
+                    <td>Sell Order</td>
+                    <td>@sellOrderResponse.Quantity</td>
+                    <td>$ @sellOrderResponse.Price</td>
+                    <td>$ @sellOrderResponse.TradeAmount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

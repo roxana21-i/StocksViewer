@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocksViewer.UI", "StocksViewer.UI\StocksViewer.UI.csproj", "{3A906436-288B-49B6-B890-4EDB640486DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0E478867-C3CC-451C-BA92-8DFBBC256DA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{BCEFD528-AF8B-4073-855C-B16049951CB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocksViewer.Core", "StocksViewer.Core\StocksViewer.Core.csproj", "{83C4B4CB-EB79-4193-8D3B-A1E210DCC434}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocksViewer.Infrastructure", "StocksViewer.Infrastructure\StocksViewer.Infrastructure.csproj", "{14E9A624-1924-4286-8BF5-6153F40B1659}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocksViewer.ServiceTests", "StocksViewer.ServiceTests\StocksViewer.ServiceTests.csproj", "{EB343ECF-2B26-43B5-BC2F-3D26E556BBDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocksViewer.ControllerTests", "StocksViewer.ControllerTests\StocksViewer.ControllerTests.csproj", "{AF5CC074-6BC7-4EA0-8B31-7A1459E90CAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A906436-288B-49B6-B890-4EDB640486DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A906436-288B-49B6-B890-4EDB640486DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A906436-288B-49B6-B890-4EDB640486DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A906436-288B-49B6-B890-4EDB640486DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83C4B4CB-EB79-4193-8D3B-A1E210DCC434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83C4B4CB-EB79-4193-8D3B-A1E210DCC434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83C4B4CB-EB79-4193-8D3B-A1E210DCC434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83C4B4CB-EB79-4193-8D3B-A1E210DCC434}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14E9A624-1924-4286-8BF5-6153F40B1659}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14E9A624-1924-4286-8BF5-6153F40B1659}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14E9A624-1924-4286-8BF5-6153F40B1659}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14E9A624-1924-4286-8BF5-6153F40B1659}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB343ECF-2B26-43B5-BC2F-3D26E556BBDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB343ECF-2B26-43B5-BC2F-3D26E556BBDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB343ECF-2B26-43B5-BC2F-3D26E556BBDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB343ECF-2B26-43B5-BC2F-3D26E556BBDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF5CC074-6BC7-4EA0-8B31-7A1459E90CAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF5CC074-6BC7-4EA0-8B31-7A1459E90CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF5CC074-6BC7-4EA0-8B31-7A1459E90CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF5CC074-6BC7-4EA0-8B31-7A1459E90CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3A906436-288B-49B6-B890-4EDB640486DD} = {0E478867-C3CC-451C-BA92-8DFBBC256DA6}
+		{83C4B4CB-EB79-4193-8D3B-A1E210DCC434} = {0E478867-C3CC-451C-BA92-8DFBBC256DA6}
+		{14E9A624-1924-4286-8BF5-6153F40B1659} = {0E478867-C3CC-451C-BA92-8DFBBC256DA6}
+		{EB343ECF-2B26-43B5-BC2F-3D26E556BBDE} = {BCEFD528-AF8B-4073-855C-B16049951CB8}
+		{AF5CC074-6BC7-4EA0-8B31-7A1459E90CAF} = {BCEFD528-AF8B-4073-855C-B16049951CB8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66D632F1-9859-44D9-8E0B-8ADAA97C49D4}
+	EndGlobalSection
+EndGlobal

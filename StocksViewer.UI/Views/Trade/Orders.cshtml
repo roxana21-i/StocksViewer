@@ -1,0 +1,49 @@
+﻿@model Orders
+@{
+    ViewBag.Title = "Orders";
+}
+
+<div id="top-bar-div" class="mt mb ml">
+    <a asp-controller="Stocks" asp-action="Explore" class="link-hover">Explore</a>
+    <a asp-controller="Trade" asp-action="Index" class="link-hover">Trade</a>
+    <a asp-controller="Trade" asp-action="Orders" class="link-hover">Orders</a>
+    <a asp-controller="Trade" asp-action="OrdersPDF" class="link-hover">Export as PDF</a>
+</div>
+
+<div class="text-grey ml">
+    <span>Stocks</span>
+    <i class="fa-solid fa-caret-right"></i>
+    <span>Orders</span>
+</div>
+
+<div class="orders-list flex">
+    <div id="buy-orders-list">
+        <div class="box">
+            <h2 class="text-grey mb">Buy Orders</h2>
+            @foreach(BuyOrderResponse buyResponse in Model.BuyOrders)
+            {
+                <div class="border-bottom mb">
+                    <h2 class="pb">@buyResponse.StockName (@buyResponse.StockSymbol)</h2>
+                    <p class="pb"><b>@buyResponse.Quantity</b> <span class="text-grey">shares at</span> <b>@buyResponse.Price</b></p>
+                    <p class="pb"><span class="text-grey">Trade amount:</span> <b>@buyResponse.TradeAmount</b></p>
+                    <p class="text-grey pb">@buyResponse.DateAndTimeOfOrder</p>
+
+                </div>
+            }
+        </div>
+    </div>
+    <div id="sell-orders-list">
+        <div class="box">
+            <h2 class="text-grey mb">Sell Orders</h2>
+            @foreach (SellOrderResponse sellResponse in Model.SellOrders)
+            {
+                <div class="border-bottom mb">
+                    <h2 class="pb">@sellResponse.StockName (@sellResponse.StockSymbol)</h2>
+                    <p class="pb"><b>@sellResponse.Quantity</b> <span class="text-grey">shares at</span> <b>@sellResponse.Price</b></p>
+                    <p class="pb"><span class="text-grey">Trade amount:</span> <b>@sellResponse.TradeAmount</b></p>
+                    <p class="text-grey pb">@sellResponse.DateAndTimeOfOrder</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>
