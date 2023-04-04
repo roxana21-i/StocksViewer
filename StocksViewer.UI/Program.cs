@@ -27,6 +27,8 @@ var app = builder.Build();
 if (builder.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
+    app.UseExceptionHandler("/Error");
+    app.UseExceptionHandlingMiddleware();
 }
 else
 {

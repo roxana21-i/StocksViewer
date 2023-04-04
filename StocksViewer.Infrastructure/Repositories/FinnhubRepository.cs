@@ -48,6 +48,11 @@ namespace Repositories
                     throw new FinnhubException("No response received");
                 }
 
+                if (responseDictionary.Count == 0)
+                {
+                    throw new FinnhubException("No matching stock found. Check your stock name and try again!");
+                }
+
                 if (responseDictionary.ContainsKey("error"))
                 {
                     throw new FinnhubException(Convert.ToString(responseDictionary["error"]));
